@@ -1,5 +1,6 @@
 // src/pages/Home.jsx
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Home() {
   return (
@@ -45,8 +46,7 @@ export default function Home() {
           {/* Left Side */}
           <div className="flex-1 text-left relative z-20">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              Let’s make your <span className="text-cyan-400">product</span> and
-              team a success.
+              Let’s make your <span className="text-cyan-400">product</span> and team a success.
             </h1>
             <p className="text-base md:text-lg text-gray-300 mb-6 max-w-lg">
               We partner with you to build better products, accelerate growth,
@@ -145,31 +145,31 @@ const cards = [
     img: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     title: "Digital Marketing",
     color: "cyan-400",
-    text: "Drive traffic, build awareness, and grow your brand with smart campaigns.",
+    text: "Drive traffic, build brand awareness, and grow your audience with targeted campaigns, SEO, social media strategies, and analytics-driven insights. Empower your business with measurable results and a strong digital presence.",
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/2721/2721298.png",
     title: "Web & App Development",
     color: "green-400",
-    text: "From sleek websites to powerful apps, we build platforms that put you ahead.",
+    text: "From sleek websites to powerful applications, we develop scalable and responsive platforms tailored to your needs. Enhance user experience, improve engagement, and optimize performance with modern development practices.",
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
     title: "Market Reach",
     color: "purple-400",
-    text: "Expand your business footprint and connect with new audiences globally.",
+    text: "Expand your business footprint and connect with new audiences globally. Utilize strategic marketing, partnerships, and innovative solutions to reach the right customers and grow your influence in competitive markets.",
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/3208/3208725.png",
     title: "SEO Optimization",
     color: "pink-400",
-    text: "Rank higher on search engines and attract quality traffic with proven SEO.",
+    text: "Rank higher on search engines and attract quality traffic through on-page and off-page SEO, keyword optimization, content strategy, and performance monitoring. Improve visibility and maximize ROI with proven SEO techniques.",
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/753/753318.png",
     title: "Brand Identity",
     color: "yellow-400",
-    text: "Craft a unique brand identity that speaks to your audience and builds trust.",
+    text: "Craft a unique and memorable brand identity that resonates with your audience. Develop logos, color schemes, messaging, and visual assets to build trust, differentiate your brand, and strengthen your market presence.",
   },
 ];
 
@@ -178,7 +178,8 @@ function Card({ img, title, text, color }) {
 
   return (
     <div
-      className={`floating-card bg-gray-900/70 backdrop-blur-md rounded-2xl shadow-lg border border-${color} p-6 text-left min-w-[300px] min-h-[320px] flex flex-col justify-between`}
+      className={`floating-card bg-gray-900/70 backdrop-blur-md rounded-2xl shadow-lg border border-${color} p-6 text-left
+              w-full sm:w-[500px] sm:h-[250px] md:w-[350px] md:h-[500px] flex flex-col justify-between`}
     >
       <div>
         <img src={img} alt={title} className="w-16 h-16 mb-4" />
@@ -199,3 +200,10 @@ function Card({ img, title, text, color }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+};

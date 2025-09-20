@@ -5,6 +5,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // Components
 import Header from "./components/header";
 import FloatingChart from "./components/FloatingChart";
+import Footer from "./components/Footer"; // import footer
 
 // Pages
 import Home from "./pages/Home";
@@ -27,6 +28,7 @@ export default function App() {
         </Routes>
       </main>
       <FloatingChart />
+      <Footer /> {/* Add the footer here */}
     </Router>
   );
 }
